@@ -150,7 +150,8 @@ namespace SmartBreadcrumbs
             var activeTemplate = BreadcrumbManager.Options.ActiveLiTemplate;
 
             if (!isActive && string.IsNullOrEmpty(normalTemplate))
-                return $"<li{GetClass(BreadcrumbManager.Options.LiClasses)}><a href=\"{link}\">{nodeTitle}</a></li>";
+                return $"<li itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\" " +
+                       $"{GetClass(BreadcrumbManager.Options.LiClasses)}><a itemprop=\"item\" href=\"{link}\"><span itemprop=\"name\">{nodeTitle}</span></a></li>";
 
             if (isActive && string.IsNullOrEmpty(activeTemplate))
                 return $"<li{GetClass(BreadcrumbManager.Options.ActiveLiClasses)}>{nodeTitle}</li>";
