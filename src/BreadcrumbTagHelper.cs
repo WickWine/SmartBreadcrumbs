@@ -73,7 +73,7 @@ namespace SmartBreadcrumbs
                 output.Attributes.Add("class", BreadcrumbManager.Options.TagClasses);
             }
 
-            output.Content.AppendHtml($"<ol class=\"{BreadcrumbManager.Options.OlClasses}\">");
+            output.Content.AppendHtml($"<ol itemscope itemtype=\"https://schema.org/BreadcrumbList\" class=\"{BreadcrumbManager.Options.OlClasses}\">");
 
             var sb = new StringBuilder();
 
